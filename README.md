@@ -1,5 +1,4 @@
-NOTE: I just made some small change to make it compatible with ROS 2 Humble
-Hawksbill, Ubuntu 22.04 and Raspberry Pi 4. tested only with Rplidar A1
+### (This fork has some remapping and change of parameters in the launch files)
 
 RPLIDAR ROS package
 =====================================================================
@@ -20,13 +19,16 @@ How to build rplidar ros package
 =====================================================================
 
 1) Clone this project to your colcon workspace src folder
+```
+git clone <repository-name>
+```
 2) Install Eloquent ROS2 and colcon compiler.
 
 
 ```
 cd [your-ros-package-directory]/src
 
-git clone git@github.com:babakhani/rplidar_ros2.git
+git clone <repository>
 
 cd [your-ros-package-directory]
 
@@ -35,15 +37,15 @@ colcon build --symlink-install
 source ./install/setup.bash
 ```
 
-Check if package exist
+Check if package exists
 
 ```
 ros2 pkg list | grep rplidar
 ```
 
-I. Run rplidar node and view in the rviz
+Start RPLIDAR
 ------------------------------------------------------------
 
 ```
-ros2 launch rplidar_ros view_rplidar.launch.py
+ros2 launch rplidar_ros rplidar.launch.py
 ```

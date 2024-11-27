@@ -9,11 +9,14 @@ def generate_launch_description():
             package='rplidar_ros',
             executable='rplidar_composition',
             output='screen',
+            remappings=[
+            ('/scan','/scan_raw')
+            ],
             parameters=[{
                 'serial_port': '/dev/ttyUSB0',
                 'serial_baudrate': 115200,  # A1 / A2
                 # 'serial_baudrate': 256000, # A3
-                'frame_id': 'laser',
+                'frame_id': 'laser_frame',
                 'inverted': False,
                 'angle_compensate': True,
             }],
